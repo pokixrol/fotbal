@@ -16,24 +16,36 @@ ctx.stroke();
 
 }
 
+let skore = {
+    xs: canvas.width -950,
+    ys:canvas.height -650,
+
+    paintskore: function(){
+        ctx.font = "30px Arial";
+    ctx.strokeStyle = 'black';
+    ctx.strokeText("000", this.xs, this.ys);
+    }
+}
+
 let branka ={
 xb: canvas.width - 50,
-yb: canvas.height -300,
+yb: canvas.height -450,
 a: 20,
 b:100,
-shift: 1,
+shift: 20,
 timer: null,
 paintbranka: function(){
     ctx.fillStyle = 'black'
     ctx.fillRect(this.xb, this.yb, this.a, this.b);
 
 },
-/*move: function(){
+move: function(){
 
 //if (this.yb <= canvas.height ){
     
     //if (this.yb >= canvas.height -100){
-        this.yb -= this.shift;
+        //this.yb -= this.shift;
+        this.yb += (Math.random() * 2 * this.shift) - this.shift;
       // }
   // if (this.yb = canvas.height -500){
    // this.yb += this.shift;
@@ -43,13 +55,15 @@ paintbranka: function(){
    // this.yb = canvas.height;
 //}
         
-}*/
+}
 
 
 }
 
 function Kolize(){
-    
+    if (kruh.x = branka.xb){
+
+    }
 }
 
 let game = {
@@ -63,7 +77,8 @@ let game = {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         kruh.paint();
         branka.paintbranka();
-        //branka.move();
+        branka.move();
+        skore.paintskore();
        
     }
 }
